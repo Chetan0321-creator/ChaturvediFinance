@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaturved Finance — आधिकारिक वेबसाइट</title>
+  <meta name="description" content="चतुर्वेद फाइनेंस: प्रोफेशनल वित्तीय सेवाएं, तुरंत संपर्क फ़ॉर्म।" />
+  <meta property="og:title" content="Chaturved Finance — आधिकारिक वेबसाइट" />
+  <meta property="og:description" content="प्रोफेशनल वित्तीय सेवाएं, तुरंत संपर्क करें।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chetan0321-creator.github.io/ChaturvedFinance/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://chetan0321-creator.github.io/ChaturvedFinance/" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Chaturved Finance", "url": "https://chetan0321-creator.github.io/ChaturvedFinance/", "telephone": "+91-00000-00000", "address": {"@type": "PostalAddress", "streetAddress": "आपका पता", "addressLocality": "शहर", "addressRegion": "राज्य", "postalCode": "पिनकोड", "addressCountry": "IN"}}
+  </script>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <div class="brand">Chaturved Finance</div>
+      <a class="btn" href="#contact">संपर्क करें</a>
+    </nav>
+    <section class="hero">
+      <h1>वित्तीय सेवाएं — भरोसे के साथ</h1>
+      <p>लोन कंसल्टिंग, निवेश मार्गदर्शन, और दस्तावेज़ सहायता। क्वालिटी, समय पर डिलीवरी और सपोर्ट।</p>
+      <a class="btn primary" href="#contact">अभी संपर्क करें</a>
+    </section>
+  </header>
+
+  <main class="container">
+    <section id="services" class="card-grid">
+      <article class="card">
+        <h2>लोन कंसल्टिंग</h2>
+        <p>ज़्यादा approval chances और सही ब्याज दर पर मार्गदर्शन।</p>
+      </article>
+      <article class="card">
+        <h2>निवेश सलाह</h2>
+        <p>आपके risk और goal के अनुसार सुझाव।</p>
+      </article>
+      <article class="card">
+        <h2>दस्तावेज़ सहायता</h2>
+        <p>KYC, बैंक फ़ॉर्म, और आवेदन तैयार करने में मदद।</p>
+      </article>
+    </section>
+
+    <section id="about" class="split">
+      <div>
+        <h2>हमारे बारे में</h2>
+        <p>Chaturved Finance का उद्देश्य है लोगों को सरल, पारदर्शी और तेज़ वित्तीय समाधान देना।</p>
+      </div>
+      <div class="feature-box">
+        <ul>
+          <li>अनुभवी टीम</li>
+          <li>समय पर डिलीवरी</li>
+          <li>समर्पित सपोर्ट</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>संपर्क फ़ॉर्म</h2>
+      <p>नीचे फ़ॉर्म भरें — हम जल्द ही आपसे संपर्क करेंगे।</p>
+
+      <form id="contactForm" class="form" autocomplete="on" novalidate>
+        <!-- Honeypot (spam रोकने के लिए) -->
+        <input type="text" name="hp_field" id="hp_field" class="hp" tabindex="-1" autocomplete="off" />
+        <label>नाम* <input name="name" required maxlength="80" /></label>
+        <label>मोबाइल* <input name="mobile" required pattern="[0-9]{10}" inputmode="numeric" placeholder="10 अंक" /></label>
+        <label>ईमेल <input name="email" type="email" maxlength="120" /></label>
+        <label>संदेश <textarea name="message" rows="4" maxlength="500"></textarea></label>
+        <button type="submit" class="btn primary">सबमिट</button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+
+      <noscript><p>JavaScript सक्षम करें ताकि फ़ॉर्म सबमिट हो सके।</p></noscript>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Chaturved Finance. सर्वाधिकार सुरक्षित।</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // === Apps Script Web App URL (नीचे वाला लिंक बाद में बदलें) ===
+    const scriptURL = "https://script.google.com/macros/s/PASTE_YOUR_APPS_SCRIPT_URL_HERE/exec";
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (form.hp_field.value) return;
+      const data = Object.fromEntries(new FormData(form).entries());
+      statusEl.textContent = 'सबमिट हो रहा है…';
+      try {
+        const res = await fetch(scriptURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          statusEl.textContent = 'शुक्रिया! आपका फ़ॉर्म मिल गया।';
+          form.reset();
+        } else {
+          statusEl.textContent = 'त्रुटि: कृपया दोबारा प्रयास करें।';
+        }
+      } catch (err) {
+        statusEl.textContent = 'नेटवर्क त्रुटि: ' + err.message;
+      }
+    });
+  </script>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

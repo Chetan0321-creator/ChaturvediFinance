@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chetan0321-creator.github.io/ChaturvedFinance/sitemap.xml
